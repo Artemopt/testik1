@@ -1,0 +1,246 @@
+@import "layout/header.sass"
+@import "layout/navigation.sass"
+@import "layout/_tour-card"
+
+$color-grey: #777777
+$color-brown-light:#BA8554
+$color-brown-dark: #A14F03
+$color-white: #FFFFFF
+$color-dark: #000000
+
+@mixin style-link
+    text-transform: uppercase
+    text-decoration: none
+    color: $color-grey
+     
+*, ::after, ::before
+
+
+html
+    font-size: 62.5%
+body
+    font-family: roboto
+    font-weight: 400
+    color: $color-grey
+    font-size: 1.6rem
+    letter-spacing: .2rem
+    padding: 5rem
+    background-color: white
+
+
+.container
+    background-color:#F7F7F7
+
+.title-first  
+    color: $color-white
+    text-transform: uppercase
+    &__main
+        display: block
+        font-size: 5rem
+        font-weight: 800
+        line-height: 6rem
+        letter-spacing: 1rem
+        margin-bottom: 1rem
+        
+
+    &__secondary
+        display: block
+        font-size: 2.4rem
+        font-weight: 200
+        line-height: 4.8rem
+        letter-spacing: .5rem
+        animation-name: leftToRight
+        animation-duration: 6s
+        animation-delay: 2s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        margin-bottom: 5rem
+
+.btn
+    &_up
+        animation-name: btntoUp
+        animation-duration: 2s
+        animation-delay: 1s
+        animation-fill-mode: backwards
+    &:link, &:visited
+        @include style-link
+        
+        
+        padding: 1.5rem 4rem
+        background: $color-white
+        border-radius: 5rem
+        display: inline-block
+        transition: all .3s
+        position: relative
+        font-size: 1.6rem
+    &:hover
+        &::after
+            opacity: 0
+            transform: scaleX(1.5) scaleY(2)
+  
+        transform: translateY(-3px)
+        box-shadow: (0px 6px 6px rgba(1, 1, 1, 1))
+
+    &:active
+        transform: translateY(-2px)
+    &::after
+        content: ""
+        background: $color-white
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all .2s
+
+@keyframes btntoUp
+    0%
+        opacity: 0
+        transform: translateY(5rem)
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes leftToRight
+    0%
+        opacity: 0
+        transform: translateX(-10rem)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+.intro
+    
+    padding-left: 103px
+    padding-right: 100px
+    &__left
+        width: 532px
+        padding-right: 100px
+
+    &__block
+        display: flex
+    &__title-gl
+        text-align: center
+        font-size: 26px
+        font-weight: 600
+        line-height: 43px
+        letter-spacing: 10px
+        background: linear-gradient(90deg, #C3956A 3.65%, #A24F03 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        margin-bottom: 3px
+
+    &__title
+        width: 532px
+        height: 24px
+        margin-bottom: 10px
+        font-style: normal
+        font-weight: 700
+        font-size: 20px
+        line-height: 24px
+        letter-spacing: 2px
+        color: #777777
+
+    &__text
+        margin-bottom: 42px
+        width: 481px
+        height: 125px
+        font-weight: 400
+        font-size: 16px
+        line-height: 22px
+        letter-spacing: 2px
+        text-align: left
+    &__btn
+        margin-bottom: 100px
+    &__text-end
+        padding-bottom: 41px
+
+.composition
+    
+    position: relative
+    &__photo    
+        position: relative
+     
+        border-radius: .5rem
+        z-index: 10
+        &_n1
+            top: 0
+            left: 0
+        &_n2
+            top: -10rem
+            left: 16rem
+        &_n3
+            top: -24rem
+            left: 2rem
+        &:hover
+            transform: scale(1.2)
+            z-index: 20
+            transition: all .5s
+    &:hover &__photo:not(:hover)
+        opacity: .7
+
+.intro__btn
+     
+
+
+
+    &:link, &:visited
+      
+        transition: all .3s
+        padding: 1rem
+        font-size: 1.6rem
+        letter-spacing: .2rem
+        font-weight: 700
+        text-decoration: none
+        color: #777777
+        border-bottom: 1px solid $color-brown-dark
+
+    &:hover
+        background-color: $color-brown-dark
+        color: $color-white
+.section__adventure  
+    position: relative
+    height: 100vh
+    background: url(../img/pex1.png) center / cover no-repeat 
+    clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 90%)
+
+.section__adventure
+    display: flex
+    justify-content: space-around
+  
+.section__blocks
+    margin-top: 150px
+    border-radius: 0.5rem
+    text-align: center
+    height: 350px
+    width: 240px
+    background-color: white
+    &:hover
+        transform: translateY(-1.5rem)
+        transition: all .3s
+.blocks
+
+    &__img
+        
+        margin-top: 30px
+        
+        
+        
+    &__title
+       
+    &__text
+
+
+.section__tour
+    padding-top: 8rem
+.tour
+    display: flex
+    justify-content: space-around
+   
+
+
+
+       
